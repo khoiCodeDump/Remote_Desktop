@@ -1,6 +1,4 @@
 package Client;
-import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
@@ -11,14 +9,10 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 
-import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -30,6 +24,10 @@ import Server.Data.Commands;
 
 public class Desktop_view extends JFrame implements KeyListener, MouseMotionListener, MouseListener, MouseWheelListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private BufferedImage image;
 	private int scaledWidth, scaledHeight;
@@ -90,7 +88,6 @@ public class Desktop_view extends JFrame implements KeyListener, MouseMotionList
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		Point curPoint = e.getPoint();
 		Commands cmd = Data.Commands.RELEASE_MOUSE;
 		try {
 			out.writeObject( new Data(cmd, e.getButton()));

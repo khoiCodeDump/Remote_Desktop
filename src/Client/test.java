@@ -7,6 +7,10 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
 public class test extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int historyDisplayedCounter = 0;
 	private final int MAX_HISTORY_DISPLAYED = 128;
 	private JPanel historyGridPanel, historyHolderPanel;
